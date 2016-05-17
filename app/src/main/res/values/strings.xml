@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">GMapDemo02</string>
+    <string name="app_name">Orientify</string>
 
     <string name="menu_mylocation">My Location</string>
     <string name="menu_trackposition">Track position</string>

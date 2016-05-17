@@ -348,7 +348,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         }
 
         if (mOptionsMenu.findItem(R.id.menu_trackposition).isChecked()) {
-            mPolylineOptions = new PolylineOptions().width(5).color(Color.RED);
+            mPolylineOptions = new PolylineOptions().width(12).color(Color.BLUE);
             mPolyline = mGoogleMap.addPolyline(mPolylineOptions);
         }
 
@@ -461,7 +461,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             mPolyline.setPoints(points);
         }
         locationPrevious = location;
-    //    notificationCustomLayout();
+        notificationCustomLayout();
         //Log.d(TAG, "Location Updated..................................");
     }
 
@@ -509,12 +509,12 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         }
 
         if (locationManager!=null){
-            locationManager.removeUpdates(this);
+           // locationManager.removeUpdates(this);
         }
-/*
+
         // get the view layout
         RemoteViews remoteView = new RemoteViews(
-                getPackageName(), R.layout.custom_notification);
+                getPackageName(), R.layout.notification_main);
 
         //Update textView values in custom Notification
         remoteView.setTextViewText(R.id.textViewTripmeterMetrics, Long.toString(totalDistance));
@@ -522,20 +522,11 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         NotificationCompat.Builder mBuilder =
                 new NotificationCompat.Builder(this)
                         .setContent(remoteView)
-                        .setSmallIcon(R.drawable.ic_my_location_white_48dp);
+                        .setSmallIcon(R.drawable.ic_room_white_24dp);
 
 
         mNotificationManager.notify(0, mBuilder.build());
-*/
-        /*final Handler h = new Handler();
-        final int delay = 1000; //milliseconds
 
-        h.postDelayed(new Runnable(){
-            public void run(){
-                h.postDelayed(this, delay);
-            }
-        }, delay);*/
-        //notificationCustomLayout();
     }
 
     @Override
@@ -555,12 +546,12 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         long distanceInMeters = Math.round(6371000 * c);
         return distanceInMeters;
     }
-/*
+
     public void notificationCustomLayout(){
 
         // get the view layout
         RemoteViews remoteView = new RemoteViews(
-                getPackageName(), R.layout.custom_notification);
+                getPackageName(), R.layout.notification_main);
 
         //Update textView values in custom Notification
         remoteView.setTextViewText(R.id.textViewTripmeterMetrics, Long.toString(totalDistance));
@@ -599,12 +590,12 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         NotificationCompat.Builder mBuilder =
                 new NotificationCompat.Builder(this)
                         .setContent(remoteView)
-                        .setSmallIcon(R.drawable.ic_my_location_white_48dp);
+                        .setSmallIcon(R.drawable.ic_room_white_24dp);
 
 
 
         mNotificationManager.notify(0, mBuilder.build());
         //notificationCalled = true;
     }
-*/
+
 }

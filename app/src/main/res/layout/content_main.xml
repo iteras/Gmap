@@ -41,7 +41,7 @@
             android:layout_marginRight="6dp"
             android:layout_toLeftOf="@id/buttonAddWayPoint"
             android:onClick="buttonCResetClicked"
-            android:text="CReset" />
+            android:text="Reset" />
 
         <TextView
             android:id="@+id/label_WP"
